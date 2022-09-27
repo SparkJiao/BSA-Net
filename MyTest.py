@@ -21,7 +21,8 @@ model = BSANet().cuda()
 model.load_state_dict(torch.load(opt.model_path))
 model.eval()
 
-for dataset in ['COD10K']:
+# for dataset in ['COD10K']:
+for dataset in ['NC4K']:
     save_path = opt.test_save
     os.makedirs(save_path, exist_ok=True)
     test_loader = test_dataset(image_root='./Dataset/TestDataset/{}/Imgs/'.format(dataset),
